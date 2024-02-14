@@ -1,0 +1,192 @@
+/* navbar */
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+.navbar{
+    background:linear-gradient(140deg, rgb(141, 176, 233)0%, rgb(47, 92, 227)100%);
+  }
+.logo{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#large-bg-image {
+
+    z-index: 4000;
+    top:0px;left:0px;
+    text-align:center;
+    margin:-50px 0 0 0;
+    padding:0px;
+    background-color:#C0DEED;
+    background:url(http://thewanderers.net/w/wp-content/uploads/2013/07/Rigi_Panorama_full.jpg) center top repeat-x;
+    padding-top:100px;
+    padding-bottom:10px;
+    width: 100%;
+    height: 800px;
+    animation: large-bg-image-animasi 200s linear infinite;
+    -ms-animation: large-bg-image-animasi 200s linear infinite;
+    -moz-animation: large-bg-image-animasi 200s linear infinite;
+    -webkit-animation: large-bg-image-animasi 200s linear infinite;
+    }
+
+@keyframes large-bg-image-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-webkit-keyframes large-bg-image-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-ms-keyframes large-bg-image-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-moz-keyframes large-bg-image-animasi {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  };
+}
+.marker-title{
+    font-size: 28px;
+    color: black;
+    font-weight: bold;
+    display: block;
+    }
+.marker-caption{
+    color: gray;
+    }
+    .move,
+    .move2,
+    .move3,
+    .move4 { 
+        border-left: 2px solid white;
+        height: 300px;
+        padding-left: 30px;
+        opacity: 0.5;
+        width: 280px;
+        top: 200px;
+        position: absolute;
+        }
+        .move:hover,
+        .move2:hover,
+        .move3:hover,
+        .move4:hover { 
+            opacity: 1;
+            }
+    
+    .move {
+        cursor: pointer;
+        text-align: left;
+        color: white;
+        right: 10%;
+        transform-origin: bottom left;
+        opacity: 0.5;
+        }
+    
+   
+     .move {
+        -webkit-animation: move-move 1s 0s ease-out forwards;
+        animation: move-move 1s 0s ease-out forwards;
+        -webkit-animation-duration: 55s;
+        animation-duration: 55s;
+    }
+
+     .move2 {
+       cursor: pointer;
+        text-align: left;
+        right: -400px;
+        transform-origin: bottom left;
+    }
+ 
+     .move2 {
+        -webkit-animation: move-move 1s 0s ease-out forwards;
+        animation: move-move 1s 0s ease-out forwards;
+        -webkit-animation-duration: 80s;
+        animation-duration: 80s;
+     }
+   
+     .move3 {
+      cursor: pointer;
+       text-align: left;
+       right: -1000px;
+       transform-origin: bottom left;
+    }
+   
+    .move3 {
+       -webkit-animation: move-move 1s 0s ease-out forwards;
+       animation: move-move 1s 0s ease-out forwards;
+       -webkit-animation-duration: 105s;
+       animation-duration: 105s;
+    }
+
+    .move4 {
+      cursor: pointer;
+       text-align: left;
+       right: -1600px;
+       transform-origin: bottom left;
+    }
+    /* This is the controls for moves sledge*/
+    .move4 {
+       -webkit-animation: move-move 1s 0s ease-out forwards;
+       animation: move-move 1s 0s ease-out forwards;
+       -webkit-animation-duration: 130s;
+       animation-duration: 130s;
+    }
+    
+    @-webkit-keyframes move-move {
+        100% {
+            right: 100%;
+        }
+    }
+    @keyframes move-move {
+        100% {
+            right:100%;
+        }
+    }
+    .imageville{
+      width: 200px;
+      height: 200px;
+    }   
+
+/* modal */
+.modal-content {
+    /* background: linear-gradient(#7ee664c8, #9198e500); */
+    background-image: url(./images/palmier.jpg);
+    background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+    
+}
+.modal-body{
+       background: linear-gradient(#7ee66400, #f6f7f6);
+}
+
