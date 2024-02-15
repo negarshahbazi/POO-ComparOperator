@@ -11,8 +11,13 @@ class TourOperator
 
 
 
-    public function __construct()
+    public function __construct($data)
     {
+        $this->name=$data['name'];
+        $this->link=$data['link'];
+        $this->gradeCount=$data['grade_count'];
+        $this->gradeTotal=$data['grade_total'];
+        $this->isPremium=$data['is_premium'];
     }
 
     /**

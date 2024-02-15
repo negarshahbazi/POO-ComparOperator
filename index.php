@@ -1,9 +1,23 @@
 <?php
-if(isset($_POST['name'])&& !empty($_POST['name'])&&isset($_POST['mot-de-pass'])&& !empty($_POST['mot-de-pass'])&&isset($_POST['send'])){
-    
+require_once('./config/autoload.php');
+require_once('./config/db.php');
+
+if(isset($_POST['name'])&& !empty($_POST['name']) && isset($_POST['mot-de-pass']) && !empty($_POST['mot-de-pass']) && isset($_POST['send'])){
+if($_POST['mot-de-pass']==="sn2024"){
+    header('Location: ./destination.php');
+    exit();
+}else{
+    echo " le mot de passe n'est pas correct!";
 }
-
-
+}
+$newManager=new Manager ($db);
+$new=$newManager->getAllDestination();
+// limit 4
+// var_dump($new);
+foreach($new as $pay){
+$tabPrice[]=$pay['price'];
+    //  var_dump($pay['price']);
+}
 ?>
 
 
@@ -48,21 +62,25 @@ if(isset($_POST['name'])&& !empty($_POST['name'])&&isset($_POST['mot-de-pass'])&
 
      <!-- poster -->
 
-     <div class="move">
-            <span class="marker-title">TUNISIE</span>
+     <div class="move mt-5">
+            <span class="marker-title">TUNIS</span>
             <span class="marker-caption"><img class="imageville" src="./images/tunisie.jpg" alt=""></span>
+            <span class="marker-title">2390€</span>
         </div>
-        <div class="move2">
-            <span class="marker-title">ESPANIA</span>
-            <span class="marker-caption"><img class="imageville" src="./images/spain.jpg" alt=""></span>
+        <div class="move2 mt-5 m">
+            <span class="marker-title">MONACO</span>
+            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
+            <span class="marker-title">1390€</span>
         </div>
-        <div class="move3">
-            <span class="marker-title">DUBAI</span>
-            <span class="marker-caption"><img class="imageville" src="./images/dubai.jpg" alt=""></span>
+        <div class="move3 mt-5" :>
+            <span class="marker-title">LONDRES</span>
+            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
+            <span class="marker-title">1100€</span>
         </div>
-        <div class="move4">
-            <span class="marker-title">Amazon</span>
-            <span class="marker-caption"><img class="imageville" src="./images/amazon.jpg" alt=""></span>
+        <div class="move4 mt-5">
+            <span class="marker-title">ROME</span>
+            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
+            <span class="marker-title">1650€</span>
         </div>
 
     </div>
@@ -81,8 +99,14 @@ if(isset($_POST['name'])&& !empty($_POST['name'])&&isset($_POST['mot-de-pass'])&
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
                         <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
-                        <label for="">Saisir votre nom:</label>
-                        <input type="text" class="rounded-pill bg-transparent mb-5" name="name" value=""><br>
+                        
+                        <select class=" rounded-pill w-50 bg-transparent mb-5" name="name" id="pet-select">
+                            <option value="">--Please choose an option--</option>
+                            <option value="Salaun Holidays">Salaun Holidays</option>
+                            <option value="Fram">Fram</option>
+                            <option value="Heliades">Heliades</option>
+
+                        </select>
                         <label for="">Saisir votre mot de pass:</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
                         <div class="modal-footer">
