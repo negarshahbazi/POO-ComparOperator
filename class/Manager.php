@@ -15,6 +15,13 @@ public function getAllDestination(){
    
    return $destinations;
 }
+public function getAllDestinationId($id){
+    $query = $this->db->prepare("SELECT * FROM destination WHERE tour_operator_id= ".$id);
+    $query->execute(); // You need to execute the query to get results
+   $destinationsId= $query->fetchAll();
+   
+   return $destinationsId;
+}
 
 public function getOperatorByDestination($id){
     $query = $this->db->prepare("SELECT * FROM destination WHERE tour_operator_id=".$id);

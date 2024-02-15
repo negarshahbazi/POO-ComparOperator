@@ -2,7 +2,7 @@
 require_once('./config/autoload.php');
 require_once('./config/db.php');
 
-if(isset($_POST['name'])&& !empty($_POST['name']) && isset($_POST['mot-de-pass']) && !empty($_POST['mot-de-pass']) && isset($_POST['send'])){
+if( isset($_POST['mot-de-pass']) && !empty($_POST['mot-de-pass']) && isset($_POST['send'])){
 if($_POST['mot-de-pass']==="sn2024"){
     header('Location: ./destination.php');
     exit();
@@ -100,17 +100,11 @@ $tabPrice[]=$pay['price'];
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
                         <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
                         
-                        <select class=" rounded-pill w-50 bg-transparent mb-5" name="name" id="pet-select">
-                            <option value="">--Please choose an option--</option>
-                            <option value="Salaun Holidays">Salaun Holidays</option>
-                            <option value="Fram">Fram</option>
-                            <option value="Heliades">Heliades</option>
-
-                        </select>
+                   
                         <label for="">Saisir votre mot de pass:</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
                         <div class="modal-footer">
-                            <button type="submit" name="send" class="btn btn-primary">Save</button>
+                            <button type="submit" name="send" class="btn btn-primary">Enter</button>
                         </div>
                     </div>
                 </div>
