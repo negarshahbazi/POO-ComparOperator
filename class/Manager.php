@@ -75,6 +75,7 @@ public function createTourOperator(TourOperator $tourOperator){
         ':grade_total' =>$tourOperator->getGradeTotal(),
         ':is_premium' =>$tourOperator->getIsPremium(),
     
+    
      
        
     ]);

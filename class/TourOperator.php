@@ -13,6 +13,9 @@ class TourOperator
 
     public function __construct($data)
     {
+        if(isset($data['id'])) {
+            $this->id = $data['id'];
+        }
         $this->name=$data['name'];
         $this->link=$data['link'];
         $this->gradeCount=$data['grade_count'];

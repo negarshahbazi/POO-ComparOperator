@@ -185,17 +185,17 @@ body{
    background-position: center;
    background-repeat: no-repeat;
    width: 300px;
-   height: 600px;
+   height: 420px;
     
 }
 .modal-body{
-       background: linear-gradient(#7ee66400, #f6f7f6);
+       background: linear-gradient(#fbfdfa, #f6f7f600);
 }
 .modal{
-  gap: 3rem;
+  gap: 1rem;
 }
 .modal-body input{
-  width: 150px;
+  width: 250px;
 
 }
 
@@ -203,4 +203,18 @@ body{
 /* destination */
 #background-destination{
 background-color: rgb(200, 220, 243);
+}
+
+.imgLogo{
+  width: 100%;
+  height: auto;
+}
+.truefalse{
+  width: 60px;
+  height: 60px;
+}
+.plus{
+  width: 250px;
+  height: 250px;
+
 }

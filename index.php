@@ -64,22 +64,22 @@ $tabPrice[]=$pay['price'];
 
      <div class="move mt-5">
             <span class="marker-title">TUNIS</span>
-            <span class="marker-caption"><img class="imageville" src="./images/tunisie.jpg" alt=""></span>
+            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
             <span class="marker-title">2390€</span>
         </div>
         <div class="move2 mt-5 m">
             <span class="marker-title">MONACO</span>
-            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
+            <span class="marker-caption"><img class="imageville" src="./images/Monaco.jpg" alt=""></span>
             <span class="marker-title">1390€</span>
         </div>
         <div class="move3 mt-5" :>
             <span class="marker-title">LONDRES</span>
-            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
+            <span class="marker-caption"><img class="imageville" src="./images/Londre.jpg" alt=""></span>
             <span class="marker-title">1100€</span>
         </div>
         <div class="move4 mt-5">
             <span class="marker-title">ROME</span>
-            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
+            <span class="marker-caption"><img class="imageville" src="./images/Rome.jpg" alt=""></span>
             <span class="marker-title">1650€</span>
         </div>
 
@@ -92,19 +92,19 @@ $tabPrice[]=$pay['price'];
             <div class="modal-dialog " role="document">
                 <div class="modal-content mt-5 ">
                     <div class="modal-header">
-                        <h5 class="modal-title">Connecter:</h5>
+                        <h2 class="modal-title text-white">Connecter:</h2>
                         <button onclick="closeImage()" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
+                    <div class="modal-body d-flex flex-column justify-content-center aligne-items-center mx-auto p-5">
                         <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
                         
                    
                         <label for="">Saisir votre mot de pass:</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
-                        <div class="modal-footer">
-                            <button type="submit" name="send" class="btn btn-primary">Enter</button>
+                        <div class="modal-footer d-flex justify-content-center aligne-items-center mt-5">
+                            <button type="submit" name="send" class="btn btn-light shadow"><h5>Enter</h5></button>
                         </div>
                     </div>
                 </div>
