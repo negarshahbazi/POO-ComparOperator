@@ -63,24 +63,24 @@ $tabPrice[]=$pay['price'];
      <!-- poster -->
 
      <div class="move mt-5">
-            <span class="marker-title">TUNIS</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
-            <span class="marker-title">2390€</span>
+            <span class="marker-title">Hotel</span>
+            <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
+        
         </div>
         <div class="move2 mt-5 m">
-            <span class="marker-title">MONACO</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Monaco.jpg" alt=""></span>
-            <span class="marker-title">1390€</span>
+            <span class="marker-title">Beach</span>
+            <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
+           
         </div>
         <div class="move3 mt-5" :>
-            <span class="marker-title">LONDRES</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Londre.jpg" alt=""></span>
-            <span class="marker-title">1100€</span>
+            <span class="marker-title"></span>
+            <span class="marker-caption"><img class="imageville" src="" alt=""></span>
+            <span class="marker-title"></span>
         </div>
         <div class="move4 mt-5">
-            <span class="marker-title">ROME</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Rome.jpg" alt=""></span>
-            <span class="marker-title">1650€</span>
+            <span class="marker-title"></span>
+            <span class="marker-caption"><img class="imageville" src="" alt=""></span>
+            <span class="marker-title"></span>
         </div>
 
     </div>
@@ -98,13 +98,13 @@ $tabPrice[]=$pay['price'];
                         </button>
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-center mx-auto p-5">
-                        <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
+                        <img class="w-50"src="./images/avatar.gif" alt="">
                         
                    
                         <label for="">Saisir votre mot de pass:</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
-                        <div class="modal-footer d-flex justify-content-center aligne-items-center mt-5">
-                            <button type="submit" name="send" class="btn btn-light shadow"><h5>Enter</h5></button>
+                        <div class="modal-footer d-flex justify-content-center aligne-items-center m-5">
+                            <button type="submit" name="send" class="btn btn-light shadow "><h5>Enter</h5></button>
                         </div>
                     </div>
                 </div>
