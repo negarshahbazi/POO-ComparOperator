@@ -132,6 +132,7 @@ $tab[]=new Destination($pay);
                 <form action="./comparer.php" method="post">
            <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Comparer</button>
            <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
+       
            </form>
             </div>
         <?php } ?>

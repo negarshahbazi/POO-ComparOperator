@@ -72,7 +72,7 @@ $tour->UpdateOperatorToPremium($tourupdate);
                 </div>
                 <div class="card-body text-white mt-5">
                     <h5 class="card-title"><?php echo $oper->getName() ?></h5>
-                    <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure.(<?= $oper->getName() ?>)</p>
+                    <p class="card-text"></p>
                 </div>
                 <ul class="list-group list-group-flush ">
                     <li class="list-group-item bg-dark text-white">Nombre de vote : <?php echo $oper->getGradeCount() ?> </li>

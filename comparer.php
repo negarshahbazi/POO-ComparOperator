@@ -7,13 +7,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])){
     $location=$_POST['location'];
 
     $locs=$tour->getOperatorBydis($location);
-    foreach($locs as $loc){
-        var_dump($loc['link']); 
-    }
-   
+    $reviews = [];
+     foreach($locs as $loc){
+     
+        $reviews[$loc['tour_operator_id']] = $tour->getReviewByOperatorId($loc['tour_operator_id']);
+    //     var_dump($reviews);
+     }
   
   
-  
+if(isset($_POST['commentaire']) && isset($_POST['sendReview'])){
+$newReview=new Review($_POST['commentaire']);
+$tour->createReview($newReview);
+}
    
 }
 ?>
@@ -63,25 +68,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])){
             <?php foreach ($locs as $loc) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
-                    <img class="imgLogo" src="images/logo4.png" class="card-img-top" alt="...">
+                    <img class="imgLogo" src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body text-white mt-5">
+                <h2 class="card-title text-success mb-4"><?php echo  $loc['name'] ?> </h2>
                     <h5 class="card-title"><?php echo $loc['location'] ?></h5>
                     <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure.</p>
                 </div>
                 <ul class="list-group list-group-flush ">
                 <li class="list-group-item bg-dark text-white">Price : <?php echo $loc['price'] ?> </li>
 
-                    <li class="list-group-item bg-dark text-white">Name de operator : <?php echo  $loc['name'] ?> </li>
+             
                     <li class="list-group-item bg-dark text-white">Grade total : <?php echo  $loc['grade_total'] ?> </li>
                     <li class="list-group-item bg-dark text-white">Premium : <?php echo  $loc['is_premium'] ?> </li>
 
                 </ul>
+                <form action="" method="post">
+                    <div class="d-flex justify-content-center align-items-center">
+                <input type="text" placeholder="Commentaire:" name="commentaire">
+                <button type="submit" name="sendReview">send</button>
+                </div>
+                </form>
                 <div class="card-body ">
-                    <form action="./alldestinations.php" method="post">
-                        <!-- <input type="hidden" name="id_tour_operator" value=""> -->
-                        <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir tout destinations</button>
-                  </form>
+                   <div>
+                    <ul class="list-unstyled">
+                    <?php foreach ($reviews[$loc['tour_operator_id']] as $rev) { ?>
+                                <li class="text-white"><?php echo $rev['message']; ?></li>
+                                <li class="text-success">(<?php echo $rev['author']; ?>)</li>
+                            <?php } ?>
+
+                    </ul>
+                   </div>
+                       <a href="<?php echo $loc['link']?>" target="_blank"><button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir le site</button></a> 
+                
                 </div>
             </div>
             <?php } ?>

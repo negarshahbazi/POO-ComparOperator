@@ -116,7 +116,7 @@ public function createDestination(Destination $destination){
 
 
 public function getOperatorBydis($location){
-    $query = $this->db->prepare("SELECT * FROM destination LEFT JOIN tour_operator ON destination.tour_operator_id= tour_operator.id WHERE location=:location" );
+    $query = $this->db->prepare("SELECT * FROM destination LEFT JOIN tour_operator ON destination.tour_operator_id= tour_operator.id WHERE location=:location ORDER BY destination.price ASC" );
     $query->execute([
         'location'=>$location
     ]); // You need to execute the query to get results
