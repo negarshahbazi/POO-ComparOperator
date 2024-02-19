@@ -68,7 +68,7 @@ $tour->UpdateOperatorToPremium($tourupdate);
         <?php foreach ($opers as $oper) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
-                    <img class="imgLogo" src="images/<?php echo $oper->getName() ?>.png" class="card-img-top" alt="...">
+                    <img class="imgLogo" src="images/logo4.png" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body text-white mt-5">
                     <h5 class="card-title"><?php echo $oper->getName() ?></h5>

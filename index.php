@@ -15,8 +15,8 @@ $new=$newManager->getAllDestination();
 // limit 4
 // var_dump($new);
 foreach($new as $pay){
-$tabPrice[]=$pay['price'];
-    //  var_dump($pay['price']);
+$tab[]=new Destination($pay);
+//  var_dump($tab);
 }
 ?>
 
@@ -113,6 +113,30 @@ $tabPrice[]=$pay['price'];
 
         </div>
     </form>
+<!-- destinations -->
+<div class="container d-flex justify-content-center aligne-items-center ">
+    <div class="row">
+        <?php foreach ($tab as $newDestination) { ?>
+            <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
+                <div class="logoAgence">
+                    <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body text-white mt-5">
+                    <h5 class="card-title"><?php echo $newDestination->getLocation() ?></h5>
+
+                </div>
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item bg-dark text-white">price : <?php echo $newDestination->getPrice()?> € / person</li>
+
+                </ul>
+                <form action="./comparer.php" method="post">
+           <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Comparer</button>
+           <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
+           </form>
+            </div>
+        <?php } ?>
+    </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

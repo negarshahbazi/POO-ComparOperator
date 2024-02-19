@@ -8,6 +8,15 @@ class Manager{
         $this->db=$db;
 }
 // method
+public function findLocation($location){
+    $query = $this->db->prepare("SELECT * FROM destination WHERE location=:location");
+    $query->execute([
+        ':location'=>$location
+    ]); // You need to execute the query to get results
+   $locations= $query->fetchAll();
+   
+   return $locations;
+}
 public function getAllDestination(){
     $query = $this->db->prepare("SELECT * FROM destination ");
     $query->execute(); // You need to execute the query to get results
@@ -26,7 +35,7 @@ public function getAllDestinationId($id){
 public function getOperatorByDestination($id){
     $query = $this->db->prepare("SELECT * FROM destination WHERE tour_operator_id=".$id);
     $query->execute(); // You need to execute the query to get results
-   $id_operator= $query->fetchAll();
+   $id_operator= $query->fetch();
    
    return $id_operator;
 }
@@ -56,6 +65,13 @@ public function getAllOperator(){
    $tour_operators= $query->fetchAll();
    
    return $tour_operators;
+}
+public function getOperatorByid($id){
+    $query = $this->db->prepare("SELECT * FROM tour_operator WHERE id=".$id);
+    $query->execute(); // You need to execute the query to get results
+   $id_operator= $query->fetch();
+
+   return $id_operator;
 }
 public function UpdateOperatorToPremium(TourOperator $tourOperator){
     
@@ -98,6 +114,17 @@ public function createDestination(Destination $destination){
     $destination->setId($id);
 }
 
-}
 
+public function getOperatorBydis($location){
+    $query = $this->db->prepare("SELECT * FROM destination LEFT JOIN tour_operator ON destination.tour_operator_id= tour_operator.id WHERE location=:location" );
+    $query->execute([
+        'location'=>$location
+    ]); // You need to execute the query to get results
+   $id_operator= $query->fetchAll();
+//    $id_operator['location']=$location;
+
+
+   return $id_operator;
+}
+}
 ?>
