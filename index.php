@@ -60,25 +60,16 @@ foreach ($new as $pay) {
 
 
         <div class="move mt-5">
-            <span class="marker-title">TUNIS</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
-            <span class="marker-title">2390€</span>
+            <span class="marker-title">Hotel</span>
+            <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
+           
         </div>
         <div class="move2 mt-5 m">
-            <span class="marker-title">MONACO</span>
-            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
-            <span class="marker-title">1390€</span>
+            <span class="marker-title">Beach</span>
+            <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
+           
         </div>
-        <div class="move3 mt-5" :>
-            <span class="marker-title">LONDRES</span>
-            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
-            <span class="marker-title">1100€</span>
-        </div>
-        <div class="move4 mt-5">
-            <span class="marker-title">ROME</span>
-            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
-            <span class="marker-title">1650€</span>
-        </div>
+    
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
     <form action="" method="post" enctype="multipart/form-data">
@@ -92,8 +83,8 @@ foreach ($new as $pay) {
                         </button>
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
-                        <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
-                        <label for="">Saisir votre nom:</label>
+                        <img class="w-50" src="./images/avatar.gif" class="opacity-75"alt="">
+                        
 
 
                         <label for="">Saisir votre mot de pass:</label>
@@ -118,18 +109,34 @@ foreach ($new as $pay) {
                     <div class="logoAgence">
                         <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
                     </div>
-                    <div class="card-body text-white mt-5">
-                        <h5 class="card-title"><?php echo $newDestination->getLocation() ?></h5>
+                    <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
+                        <h3 class="card-title"><?php echo $newDestination->getLocation() ?></h3>
+                        <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
 
                     </div>
-                    <ul class="list-group list-group-flush ">
-                        <li class="list-group-item bg-dark text-white">price : <?php echo $newDestination->getPrice() ?> € / person</li>
+                    <ul class="list-group list-unstyled">
+                        <div class="d-flex justify-content-between aligne-items-center">
+                            <li class=" bg-dark text-white  w-25">
 
+	
+                            <div class="rating rating2"><!--
+		--><a href="#5" title="Give 5 stars">★</a><!--
+		--><a href="#4" title="Give 4 stars">★</a><!--
+		--><a href="#3" title="Give 3 stars">★</a><!--
+		--><a href="#2" title="Give 2 stars">★</a><!--
+		--><a href="#1" title="Give 1 star">★</a>
+	</div>
+
+
+                            </li>
+                            <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
+
+                        </div>
                     </ul>
                     <form action="./comparer.php" method="post">
                         <button type="submit" class="text-center btn btn-success card-link text-decoration-none text-white">Comparer</button>
                         <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
-                       
+
                     </form>
                 </div>
             <?php } ?>

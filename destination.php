@@ -68,7 +68,7 @@ $tour->UpdateOperatorToPremium($tourupdate);
         <?php foreach ($opers as $oper) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
-                    <img class="imgLogo" src="images/logo4.png" class="card-img-top" alt="...">
+                    <img class="imgLogo mt-3 rounded-3 shadow" src="images/logo4.png" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body text-white mt-5">
                     <h5 class="card-title"><?php echo $oper->getName() ?></h5>
@@ -76,7 +76,7 @@ $tour->UpdateOperatorToPremium($tourupdate);
                 </div>
                 <ul class="list-group list-group-flush ">
                     <li class="list-group-item bg-dark text-white">Nombre de vote : <?php echo $oper->getGradeCount() ?> </li>
-                    <li class="list-group-item bg-dark text-white"> Grade Total : <?php echo $oper->getGradeTotal() ?><svg fill="#ffd500" width="56px" height="56px" viewBox="-23.04 -23.04 78.08 78.08" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffd500"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>star</title> <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path> </g></svg></li>
+                    <li class="list-group-item bg-dark text-white"> Grade Total : <?php echo $oper->getGradeTotal() ?>/10<svg fill="#ffd500" width="56px" height="56px" viewBox="-23.04 -23.04 78.08 78.08" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffd500"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>star</title> <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path> </g></svg></li>
                     <li class="list-group-item bg-dark text-white ">Is Premium : <img class="truefalse"src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></li>
                 </ul>
                 <div class="card-body ">
