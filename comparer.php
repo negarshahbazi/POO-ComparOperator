@@ -3,25 +3,37 @@ require_once('./config/autoload.php');
 require_once('./config/db.php');
 
 $tour = new Manager($db);
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])){
-    $location=$_POST['location'];
+//  var_dump($_POST['location']);
 
-    $locs=$tour->getOperatorBydis($location);
+if(!isset($_POST['location']) && isset($_SESSION['location'])) {
+    // $_SESSION['location'] = $_POST['location'];
+    $location = $_SESSION['location'];
+    $locs = $tour->getOperatorBydis($location);
     $reviews = [];
-     foreach($locs as $loc){
-     
-        $reviews[$loc['tour_operator_id']] = $tour->getReviewByOperatorId($loc['tour_operator_id']);
-    //     var_dump($reviews);
-     }
-  
-  
-if(isset($_POST['commentaire']) && isset($_POST['sendReview'])){
-$newReview=new Review($_POST['commentaire']);
-$tour->createReview($newReview);
+    foreach ($locs as $value) {
+
+        $reviews[$value['tour_operator_id']] = $tour->getReviewByOperatorId($value['tour_operator_id']);
+        // var_dump($reviews);
+
 }
-   
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) 
+{
+    // var_dump($_SESSION['location']);
+    $location = $_POST['location'];
+    $locs = $tour->getOperatorBydis($location);
+    $reviews = [];
+    foreach ($locs as $value) {
+
+        $reviews[$value['tour_operator_id']] = $tour->getReviewByOperatorId($value['tour_operator_id']);
+        // var_dump($reviews);
+    }
+
 }
 ?>
+
 
 
 
@@ -64,46 +76,54 @@ $tour->createReview($newReview);
 
     </div>
     <div class="row d-flex justify-content-around aligne-items-center p-5">
-       
-            <?php foreach ($locs as $loc) { ?>
+
+        <?php foreach ($locs as $loc) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
                     <img class="imgLogo" src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
                 </div>
+                
                 <div class="card-body text-white mt-5">
-                <h2 class="card-title text-success mb-4"><?php echo  $loc['name'] ?> </h2>
+                    <h2 class="card-title text-success mb-4"><?php echo  $loc['name'] ?> </h2>
                     <h5 class="card-title"><?php echo $loc['location'] ?></h5>
                     <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure.</p>
                 </div>
                 <ul class="list-group list-group-flush ">
-                <li class="list-group-item bg-dark text-white">Price : <?php echo $loc['price'] ?> </li>
+                    <li class="list-group-item bg-dark text-white">Price : <?php echo $loc['price'] ?> </li>
 
-             
+
                     <li class="list-group-item bg-dark text-white">Grade total : <?php echo  $loc['grade_total'] ?> </li>
                     <li class="list-group-item bg-dark text-white">Premium : <?php echo  $loc['is_premium'] ?> </li>
 
                 </ul>
-                <form action="" method="post">
-                    <div class="d-flex justify-content-center align-items-center">
-                <input type="text" placeholder="Commentaire:" name="commentaire">
-                <button type="submit" name="sendReview">send</button>
-                </div>
-                </form>
                 <div class="card-body ">
-                   <div>
-                    <ul class="list-unstyled">
-                    <?php foreach ($reviews[$loc['tour_operator_id']] as $rev) { ?>
-                                <li class="text-white"><?php echo $rev['message']; ?></li>
-                                <li class="text-success">(<?php echo $rev['author']; ?>)</li>
+                    <div>
+                        <ul class="list-unstyled">
+                            <?php foreach ($reviews[$loc['tour_operator_id']] as $rev) { ?>
+                                <li class="text-white"><?php echo $rev['message'] ?></li>
+                                <li class="text-success">(<?php echo $rev['author'] ?>)</li>
+
                             <?php } ?>
 
-                    </ul>
-                   </div>
-                       <a href="<?php echo $loc['link']?>" target="_blank"><button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir le site</button></a> 
-                
+
+                        </ul>
+                    </div>
+                    <form action="./process/review.php" method="post">
+                        <label class="text-white-50" for="author">Saisir votre nom:</label>
+                        <input class="w-100 bg-transparent text-white border shadow" type="text" name="author" id="author" required>
+
+                        <label class="text-white-50" for="message">Saisir votre commentaire:</label>
+                        <textarea class="w-100 bg-transparent text-white border shadow" name="message" id="message" required></textarea>
+
+                        <button type="submit" name="but" class="btn btn-success m-2">Envoyer</button>
+                        <input type="hidden" name="id" value="<?php echo $loc['tour_operator_id']; ?>">
+                        <input type="hidden" name="location" value="<?php echo isset($_POST['location']) ? htmlspecialchars($_POST['location']) : htmlspecialchars($_SESSION['location']); ?>">
+                    </form>
+                    <a href="<?php echo $loc['link'] ?>" target="_blank"><button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir le site</button></a>
+
                 </div>
             </div>
-            <?php } ?>
+        <?php } ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
