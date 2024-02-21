@@ -10,17 +10,22 @@ class TourOperator
     private $isPremium;
 
 
-
     public function __construct($data)
     {
         if(isset($data['id'])) {
             $this->id = $data['id'];
         }
-        $this->name=$data['name'];
-        $this->link=$data['link'];
+        if(isset($data['name'])) {
+            $this->name = $data['name'];
+        }
+        if(isset($data['link'])) {
+            $this->link = $data['link'];
+        }
         $this->gradeCount=$data['grade_count'];
         $this->gradeTotal=$data['grade_total'];
-        $this->isPremium=$data['is_premium'];
+        if(isset($data['is_premium'])) {
+            $this->isPremium = $data['is_premium'];
+        }
     }
 
     /**

@@ -57,22 +57,32 @@ foreach ($new as $pay) {
                 </div>
             </div>
         </nav>
-
+        
 
         <div class="move mt-5">
-            <span class="marker-title">Hotel</span>
-            <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
-           
+            <span class="marker-title">TUNIS</span>
+            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
+            <span class="marker-title">2390€</span>
         </div>
         <div class="move2 mt-5 m">
-            <span class="marker-title">Beach</span>
-            <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
-           
+            <span class="marker-title">MONACO</span>
+            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
+            <span class="marker-title">1390€</span>
         </div>
-    
+        <div class="move3 mt-5" :>
+            <span class="marker-title">LONDRES</span>
+            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
+            <span class="marker-title">1100€</span>
+        </div>
+        <div class="move4 mt-5">
+            <span class="marker-title">ROME</span>
+            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
+            <span class="marker-title">1650€</span>
+        </div>
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
-    <form action="" method="post" enctype="multipart/form-data">
+     
+     <form action="" method="post" enctype="multipart/form-data">
         <div class="modal mt-5 text-center" id="administrateur" tabindex="-1" role="dialog">
             <div class="modal-dialog " role="document">
                 <div class="modal-content mt-5 ">
@@ -116,19 +126,7 @@ foreach ($new as $pay) {
                     </div>
                     <ul class="list-group list-unstyled">
                         <div class="d-flex justify-content-between aligne-items-center">
-                            <li class=" bg-dark text-white  w-25">
-
-	
-                            <div class="rating rating2"><!--
-		--><a href="#5" title="Give 5 stars">★</a><!--
-		--><a href="#4" title="Give 4 stars">★</a><!--
-		--><a href="#3" title="Give 3 stars">★</a><!--
-		--><a href="#2" title="Give 2 stars">★</a><!--
-		--><a href="#1" title="Give 1 star">★</a>
-	</div>
-
-
-                            </li>
+                     
                             <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
 
                         </div>

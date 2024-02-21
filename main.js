@@ -4,3 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#administrateur').modal('show');
     });
 });
+
+
+

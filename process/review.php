@@ -20,7 +20,7 @@ isset($_POST['location']) && !empty($_POST['location']) )
     $review->createReview($newreview);
     $_SESSION['location']=$_POST['location'];
 
-    var_dump($_SESSION['location']);// die();
+
     header('Location: ../comparer.php');
 }
 ?>

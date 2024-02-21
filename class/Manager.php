@@ -53,10 +53,12 @@ public function createReview(Review $review){
   
 }
 public function getReviewByOperatorId($id){
-    $query = $this->db->prepare("SELECT * FROM review WHERE tour_operator_id=".$id);
-    $query->execute(); // You need to execute the query to get results
+    $query = $this->db->prepare("SELECT * FROM review WHERE tour_operator_id= :id ORDER BY review.id DESC");
+    $query->execute([
+        ':id'=>$id,
+    ]); // You need to execute the query to get results
    $id_review= $query->fetchAll();
-   
+
    return $id_review;
 }
 public function getAllOperator(){
@@ -81,6 +83,18 @@ public function UpdateOperatorToPremium(TourOperator $tourOperator){
         ':id'=> $tourOperator->getId(),
     ]);
     
+}
+public function UpdateOperatorGrade(TourOperator $tourOperator){
+    $query = $this->db->prepare("UPDATE tour_operator SET grade_count = :grade_count, grade_total = :grade_total WHERE id = :id");
+    $query->execute([
+        ':grade_count' => $tourOperator->getGradeCount(), 
+        ':grade_total' => $tourOperator->getGradeTotal(),
+        ':id' => $tourOperator->getId(),
+    ]);
+}
+
+public function MoyenOperatorGrade($a , $b){
+    return ($a + $b) / 2;
 }
 public function createTourOperator(TourOperator $tourOperator){
     $query = $this->db->prepare("INSERT INTO tour_operator (name, link, grade_count, grade_total, is_premium) VALUES (:name, :link,:grade_count,:grade_total,:is_premium) ");
