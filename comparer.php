@@ -88,7 +88,7 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                 <div class="row">
                     <div class="col-md-5 ">
                         <div class=" logoAgence p-0 ">
-                            <img class="imgLogo " src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
+                            <img class="imgLogo  rounded-5 " src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
 
                         </div>
 
@@ -107,8 +107,8 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                                 </p>
 
 
-                                <div class="col-md-8 text-center mx-auto">
-                                    <ul class="list-group list-group-flush ">
+                                <div class="col-md-8  mx-auto text-center">
+                                    <ul class="list-group list-group-flush  ">
                                         <li class="list-group-item bg-dark text-white"><span class="text-warning fw-bolder"><?php echo $loc['price'] ?> € <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto w-25" preserveAspectRatio="xMidYMid meet" fill="#000000">
                                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -129,7 +129,7 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
                                         <li class="list-group-item bg-dark text-white">Grade:<span class="text-warning"> <?php echo  $loc['grade_total'] ?> </span>/10 <img class="w-25 h-75" src="./images/satisfaction-.png" alt=""></li>
 
-                                        <li class="list-group-item bg-dark text-white ">Premium: <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
+                                        <li class="list-group-item bg-dark text-white ">Is Premium: <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
 
 
                                     </ul>
@@ -169,9 +169,9 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
                                 <label class="text-white-50" for="message">Saisir votre commentaire:</label>
                                 <textarea class="w-100 bg-transparent text-white border shadow" name="message" id="message" required></textarea>
-                         
-                                <!-- /============etoile=====/ -->
                                 <h6 class="text-white mt-3">Donnez une note: </h6>
+                                <!-- /============etoile=====/ -->
+                              
                                 <fieldset class="rating mb-5">
                                     <input class="input" type="radio" id="star5-<?= $i ?>" name="rating" value="5" />
                                     <label class="label full" for="star5-<?= $i ?>" title="Awesome - 5 stars"></label>

@@ -103,7 +103,8 @@ foreach ($new as $pay) {
 
     </form>
     <!-- destinations -->
-    <div class="container-md">
+    <div class="background">
+    <div class="container-md ">
         <div class="row">
             <?php foreach ($tab as $newDestination) { ?>
                 <div class="col-md-6 col-12 mx-auto m-3 p-2 card bg-dark " style="width: 18rem;">
@@ -130,6 +131,7 @@ foreach ($new as $pay) {
                 </div>
             <?php } ?>
         </div>
+    </div>
     </div>
 <!-- footer -->
     <footer id="footer" class="footer-1">
