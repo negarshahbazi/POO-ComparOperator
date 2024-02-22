@@ -26,8 +26,11 @@ foreach ($new as $pay) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>COMPAROPERATOR</title>
     <link rel="stylesheet" href="./style.css">
+    <!-- logo in link -->
+    <link rel="icon" type="image/x-icon" href="./images/logo4.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -43,7 +46,7 @@ foreach ($new as $pay) {
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-dark fw-bolder" aria-current="page" href="#">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="#"><button class="bg-transparent border border-0 text-white" data-toggle="modal" id="myAdministrateur" data-toggle="modal" data-target="#administateur">Administrateur</button></a>
@@ -100,10 +103,10 @@ foreach ($new as $pay) {
 
     </form>
     <!-- destinations -->
-    <div class="container d-flex justify-content-center aligne-items-center alldistanations">
+    <div class="container-md">
         <div class="row">
             <?php foreach ($tab as $newDestination) { ?>
-                <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
+                <div class="col-md-6 col-12 mx-auto m-3 p-2 card bg-dark " style="width: 18rem;">
                     <div class="logoAgence">
                         <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
                     </div>
@@ -146,10 +149,10 @@ foreach ($new as $pay) {
 <h5 class="widget-title">Liens rapides<span></span></h5>
 <ul class="thumbnail-widget">
 <li>
-<div class="thumb-content"><a href="./index.php">Destinations</a></div>	
+<div class="thumb-content"><a class="text-warning"href="./index.php">Destinations</a></div>	
 </li>
 <li>
-<div class="thumb-content"><a href="#.">About</a></div>	
+<div class="thumb-content"><a class="text-warning"href="#.">About</a></div>	
 </li>
 </ul>
 </div>
@@ -164,8 +167,8 @@ foreach ($new as $pay) {
 <div class="widget no-box">
 <h5 class="widget-title">Contactez nous<span></span></h5>
 
-<p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-<p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+<p><a class="text-success"href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+<p><a class="text-success"href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
 </a></p>
 
 <ul class="social-footer2">

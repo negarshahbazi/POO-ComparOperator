@@ -61,6 +61,16 @@ public function getReviewByOperatorId($id){
 
    return $id_review;
 }
+public function getReviewByAuthor($author,$id){
+    $query = $this->db->prepare("SELECT * FROM review WHERE author= :author AND tour_operator_id= :id  ");
+    $query->execute([
+        ':author'=>$author,
+        ':id'=>$id,
+    ]); // You need to execute the query to get results
+   $author_review= $query->fetch();
+
+   return $author_review;
+}
 public function getAllOperator(){
     $query = $this->db->prepare("SELECT * FROM tour_operator ");
     $query->execute(); // You need to execute the query to get results

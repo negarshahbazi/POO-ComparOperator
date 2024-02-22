@@ -52,7 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Home</a>
+                            <a class="nav-link  text-white" aria-current="page" href="./index.php">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark fw-bolder" aria-current="page" href="#">Administrateur</a>
                         </li>
 
 
@@ -105,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
         <?php } ?>
     </div>
     <!-- + -->
-    <div class="card bg-dark mx-auto" style="width: 18rem;">
+    <div class="card bg-dark mx-auto mb-3 p-3" style="width: 18rem;">
         <div class="d-flex justify-content-center aligne-items-center">
             <a href="#"><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -145,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 
     <!-- footer -->
     <footer id="footer" class="footer-1">
-<div class="main-footer widgets-dark typo-light">
+<div class="main-footer widgets-dark typo-light ">
 <div class="container">
 <div class="row">
   
@@ -161,10 +164,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 <h5 class="widget-title">Liens rapides<span></span></h5>
 <ul class="thumbnail-widget">
 <li>
-<div class="thumb-content"><a href="./index.php">Destinations</a></div>	
+<div class="thumb-content"><a class="text-warning" href="./index.php">Destinations</a></div>	
 </li>
 <li>
-<div class="thumb-content"><a href="#.">About</a></div>	
+<div class="thumb-content"><a class="text-warning" href="#.">About</a></div>	
 </li>
 </ul>
 </div>
@@ -179,8 +182,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 <div class="widget no-box">
 <h5 class="widget-title">Contactez nous<span></span></h5>
 
-<p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-<p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+<p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+<p><a class="text-success"href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
 </a></p>
 
 <ul class="social-footer2">
