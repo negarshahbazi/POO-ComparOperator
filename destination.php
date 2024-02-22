@@ -22,6 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
     $tour->UpdateOperatorToPremium($tourupdate);
     // var_dump($tourupdate);
 }
+
+
+
 ?>
 
 
@@ -54,10 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 
 
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Search</button>
-                    </form>
+
                 </div>
             </div>
         </nav>
@@ -84,7 +84,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                                 <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path>
                             </g>
                         </svg></li>
-                    <li class="list-group-item bg-dark text-white ">Is Premium : <img class="truefalse" src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></li>
+                    <div class="d-flex m-2">
+                        <li class="list-group-item bg-dark text-white border-0">Is Premium : </li>
+                            <!-- modifier premium -->
+                            <form action="./process/premium.php" method="post">
+                                <input type="hidden" value="<?php echo $oper->getId() ?>" name="modifierPremiumIdOperator">
+                                <button type="submit" name="sendModifier" class="btn bg-success-subtle p-0 shadow rounded-circle hover"><img class="truefalse" src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></button>
+                            </form>
+                       
+                    </div>
+
                 </ul>
                 <div class="card-body ">
                     <form action="./alldestinations.php" method="post">

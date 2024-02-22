@@ -14,9 +14,9 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
         $reviews[$value['tour_operator_id']] = $tour->getReviewByOperatorId($value['tour_operator_id']);
         // var_dump($reviews);
-        $newtour = $tour->getOperatorByid($value['tour_operator_id']);
-        // var_dump($newtour);
-        $mytour = new TourOperator($newtour);
+     
+    
+       
     }
 }
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -65,10 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
 
 
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Search</button>
-                    </form>
+             
                 </div>
             </div>
         </nav>
@@ -78,9 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
     <div class="container p-5">
 
         <?php 
-        
-        foreach ($locs as $loc) { ?>
-            <div class=" card bg-dark m-3">
+      
+        foreach ($locs as $loc) { 
+        ?>
+            <div class=" card bg-dark m-3 p-3">
                 <div class="row">
                     <div class="col-md-5">
                         <div class=" logoAgence p-0 ">
@@ -142,6 +140,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
                         </div>
                         <div>
                         <form action="./process/review.php" method="post">
+                        <h6 class="text-white">commenter:</h6>
+
                             <label class="text-white-50" for="author">Saisir votre nom:</label>
                             <input class="w-100 bg-transparent text-white border shadow " type="text" name="author" id="author" required>
 
@@ -191,15 +191,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
                     </div>
                 </div>
             </div>
-        <?php } ?>
+          <?php } ?>
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
         const inputs = document.querySelectorAll('.input');
         inputs.forEach((input) => {
             input.addEventListener('click', () => {
                 console.log(input);
             })
         });
+    });
+
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>

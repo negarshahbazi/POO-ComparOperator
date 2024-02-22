@@ -50,35 +50,23 @@ foreach ($new as $pay) {
                         </li>
 
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Search</button>
-                    </form>
+                 
                 </div>
             </div>
         </nav>
         
 
         <div class="move mt-5">
-            <span class="marker-title">TUNIS</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
-            <span class="marker-title">2390€</span>
+            <span class="marker-title">Hotel</span>
+            <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
+         
         </div>
         <div class="move2 mt-5 m">
-            <span class="marker-title">MONACO</span>
-            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
-            <span class="marker-title">1390€</span>
+            <span class="marker-title">Beach</span>
+            <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
+     
         </div>
-        <div class="move3 mt-5" :>
-            <span class="marker-title">LONDRES</span>
-            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
-            <span class="marker-title">1100€</span>
-        </div>
-        <div class="move4 mt-5">
-            <span class="marker-title">ROME</span>
-            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
-            <span class="marker-title">1650€</span>
-        </div>
+ 
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
      

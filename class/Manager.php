@@ -76,7 +76,7 @@ public function getOperatorByid($id){
    return $id_operator;
 }
 public function UpdateOperatorToPremium(TourOperator $tourOperator){
-    
+    // var_dump($tourOperator);
     $query = $this->db->prepare("UPDATE tour_operator SET is_premium = :is_premium WHERE id = :id");
     $query->execute([
         ':is_premium'=> $tourOperator->getIsPremium(),

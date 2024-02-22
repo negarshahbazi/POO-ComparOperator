@@ -1,13 +1,16 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 
+
+
 /* navbar */
 body {
+
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: "ff-tisa-sans-web-pro",sans-serif;
 
 }
 
