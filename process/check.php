@@ -26,7 +26,7 @@ isset ($_POST['location'])
     $pseudoSession = $_POST['author'];
     $id=$_POST['id'];
 
-    var_dump($pseudoSession);
+    // var_dump($pseudoSession);
     // verifier si il exist dans la bd
     $author=$reveiwAuthor->getReviewByAuthor($pseudoSession, $id);
     // var_dump($author);
@@ -46,8 +46,8 @@ isset ($_POST['location'])
         $reveiwAuthor->createReview($newreview);
 $newGradeCount = $_POST['grade_count']+1;
     $newGradeTotal = $reveiwAuthor->MoyenOperatorGrade($_POST['rating'], $_POST['grade_total'] );
-    var_dump($newGradeTotal);
-    var_dump($newGradeCount);
+    // var_dump($newGradeTotal);
+    // var_dump($newGradeCount);
     $newTour = new TourOperator([
         'name' => $_POST['name'],
         'link' => $_POST['link'],
