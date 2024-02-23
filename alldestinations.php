@@ -54,10 +54,10 @@ foreach ($destinations as $destination) {
             </div>
         </nav>
     </div>
-    <div class="container d-flex justify-content-center aligne-items-center ">
+    <div class="container-md">
         <div class="row">
             <?php foreach ($dests as $dest) { ?>
-                <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
+                <div class="col-md-6 m-3 p-2 card bg-dark mx-auto" style="width: 18rem;">
                     <div class="logoAgence">
                         <img class="imgLogo" src="images/<?php echo $dest->getLocation() ?>.jpg" class="card-img-top" alt="...">
                     </div>

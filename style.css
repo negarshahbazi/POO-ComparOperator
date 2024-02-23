@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 
 }
 .background{
@@ -122,6 +123,7 @@ body {
   width: 280px;
   top: 200px;
   position: absolute;
+
 }
 
 .move:hover,

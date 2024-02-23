@@ -15,13 +15,7 @@ isset($_POST['isPremium'])&&
 isset ($_POST['location'])
  )
 {
-    // var_dump($_POST['rating']);
-    // var_dump($_POST['name']);
-    // var_dump($_POST['link']);
-    // var_dump($_POST['grade_total']);
-    // var_dump($_POST['grade_count']);
-    // var_dump($_POST['isPremium']);
-    // var_dump($_POST['location']);
+
 
     $pseudoSession = $_POST['author'];
     $id=$_POST['id'];
