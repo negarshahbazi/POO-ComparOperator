@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <option class=" bg-transparent text-dark border shadow " value="0">non</option>
                 <option class=" bg-transparent text-dark border shadow " value="1">oui</option>
             </select>
-            <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
+            <button type="submit" name="submitnew" class="btn btn-success m-2">Enregistrer</button>
         </form>
 
     </div>

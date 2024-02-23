@@ -123,7 +123,7 @@ foreach ($destinations as $destination) {
             <input class="w-100 bg-transparent text-white  border shadow " type="text" name="price" value="">
 
             <input type="hidden" value="<?php echo $idOperator ?>" name="id_tour_operator">
-            <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
+            <button type="submit" name="submitnew" class="btn btn-success m-2">Enregistrer</button>
         </form>
 
     </div>
