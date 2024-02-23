@@ -13,11 +13,7 @@ class Review{
         $this->message=$data['message'];
         $this->author=$data['author'];
         $this->tourOperatorId=$data['tour_operator_id'];
-
     }
-
-
-    
 
     /**
      * Get the value of id

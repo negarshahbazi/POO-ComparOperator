@@ -184,7 +184,7 @@ body {
   text-align: left;
   right: -1600px;
   transform-origin: bottom left;
-}
+} */
 
 /* This is the controls for moves sledge*/
 /* .move4 {
@@ -209,11 +209,11 @@ body {
 .imageville {
   width: 200px;
   height: 200px;
-} */ */
+} */
 
 /* modal */
 .modal-content {
-
+  /* background: linear-gradient(#7ee664c8, #9198e500); */
   background-image: url(./images/palmier.jpg);
   background-size: cover;
   background-position: center;

@@ -1,64 +1,56 @@
 <?php
 require_once '../config/autoload.php';
 require_once '../config/db.php';
+
 $reveiwAuthor = new Manager($db);
 
-if(isset($_POST['message']) && !empty($_POST['message']) && 
-isset($_POST['author']) && !empty($_POST['author'])&&
-isset($_POST['rating']) && !empty($_POST['rating'])&&
-isset($_POST['id']) && 
-isset($_POST['name']) && 
-isset($_POST['link']) && 
-isset($_POST['grade_total']) && 
-isset($_POST['grade_count']) && 
-isset($_POST['isPremium'])&&
-isset ($_POST['location'])
- )
-{
+if (isset($_POST['message']) && !empty($_POST['message']) &&
+    isset($_POST['author']) && !empty($_POST['author']) &&
+    isset($_POST['rating']) && !empty($_POST['rating']) &&
+    isset($_POST['id']) &&
+    isset($_POST['location'])) {
 
 
     $pseudoSession = $_POST['author'];
-    $id=$_POST['id'];
+    $id = $_POST['id'];
 
-    // var_dump($pseudoSession);
-    // verifier si il exist dans la bd
-    $author=$reveiwAuthor->getReviewByAuthor($pseudoSession, $id);
+    $author = $reveiwAuthor->getReviewByAuthor($pseudoSession, $id);
     // var_dump($author);
     // die();
-    //si le pseudo n'est pas dans la bd
+
+    //si le pseudo est dans la bd
     if ($author == true) {
 
-        echo"tu est deja donner votre avie";
-
-    }else {
+        echo "vous avez deja donné votre avis";
+    } else {
         $newreview = new Review([
-            'message'=>$_POST['message'],
-            'author'=>$_POST['author'],
-            'tour_operator_id'=>$_POST['id']
+            'message' => $_POST['message'],
+            'author' => $_POST['author'],
+            'tour_operator_id' => $_POST['id']
         ]);
 
         $reveiwAuthor->createReview($newreview);
-$newGradeCount = $_POST['grade_count']+1;
-    $newGradeTotal = $reveiwAuthor->MoyenOperatorGrade($_POST['rating'], $_POST['grade_total'] );
-    // var_dump($newGradeTotal);
-    // var_dump($newGradeCount);
-    $newTour = new TourOperator([
-        'name' => $_POST['name'],
-        'link' => $_POST['link'],
-        'grade_count' => $newGradeCount,
-        'grade_total' => $newGradeTotal,
-        'id' => $_POST['id'],
-        'is_premium' => $_POST['isPremium']
-    ]);
+        $tourOperateurbyId = $reveiwAuthor->getOperatorByid($_POST['id']);
+        // after every grade star 
+        $newGradeCount = $tourOperateurbyId['grade_count'] + 1;
+        $newGradeTotal = $reveiwAuthor->MoyenOperatorGrade($_POST['rating'], $tourOperateurbyId['grade_total']);
+        // var_dump($newGradeTotal);
+        // var_dump($newGradeCount);
+        
+        $newTour = new TourOperator([
+            'name' => $tourOperateurbyId['name'],
+            'link' => $tourOperateurbyId['link'],
+            'grade_count' => $newGradeCount,
+            'grade_total' => $newGradeTotal,
+            'id' => $tourOperateurbyId['id'],
+            'is_premium' => $tourOperateurbyId['isPremium']
+        ]);
 
-    $reveiwAuthor->UpdateOperatorGrade($newTour);
-    $_SESSION['location']=$_POST['location'];
+        $reveiwAuthor->UpdateOperatorGrade($newTour);
+        $_SESSION['location'] = $_POST['location'];
 
-    header('Location: ../comparer.php');
-
-}
-
-
-    }else{
-        echo"votre formulaire n'est pas completé"; 
+        header('Location: ../comparer.php');
     }
+} else {
+    echo "le formulaire n'est pas rempli correctement";
+}

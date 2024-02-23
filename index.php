@@ -42,7 +42,7 @@ foreach ($new as $pay) {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="./index.php"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -58,8 +58,8 @@ foreach ($new as $pay) {
             </div>
         </nav>
 
-        <div >
-         <img class="w-50 h-50" src="./images/logo-transparent-png.png" alt="">
+        <div class="">
+         <img class="w-50 h-50 mt-5" src="./images/logo-transparent2-png.png" alt="">
          </div>
             <!-- <div class="move mt-5">
                 <span class="marker-title">Hotel</span>

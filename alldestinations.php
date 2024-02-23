@@ -32,12 +32,13 @@ foreach ($destinations as $destination) {
 
 <body id="background-destination">
     <div>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg  container bg-black rounded-5 shadow">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="./index.php"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -54,6 +55,7 @@ foreach ($destinations as $destination) {
             </div>
         </nav>
     </div>
+    <!-- show all of the destination by administrateur -->
     <div class="container-md">
         <div class="row">
             <?php foreach ($dests as $dest) { ?>
@@ -78,7 +80,8 @@ foreach ($destinations as $destination) {
             <?php } ?>
         </div>
     </div>
-    <!-- + -->
+
+    <!-- + add new destination by administrateur-->
     <div class="card bg-dark mx-auto mb-3 p-3" style="width: 18rem;">
         <div class="d-flex justify-content-center aligne-items-center">
             <a href="#"><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
