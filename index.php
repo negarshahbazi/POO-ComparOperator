@@ -58,8 +58,10 @@ foreach ($new as $pay) {
             </div>
         </nav>
 
-        <div class="d-none d-lg-block">
-            <div class="move mt-5">
+        <div >
+         <img class="w-50 h-50" src="./images/logo-transparent-png.png" alt="">
+         </div>
+            <!-- <div class="move mt-5">
                 <span class="marker-title">Hotel</span>
                 <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
 
@@ -68,8 +70,8 @@ foreach ($new as $pay) {
                 <span class="marker-title">Beach</span>
                 <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
 
-            </div>
-        </div>
+            </div> -->
+      
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
 
@@ -83,7 +85,7 @@ foreach ($new as $pay) {
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
+                    <div class="modal-body d-flex flex-column justify-content-center aligne-items-center">
                         <img class="w-50" src="./images/avatar.gif" class="opacity-75" alt="">
 
 

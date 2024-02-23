@@ -51,6 +51,7 @@ body {
   -moz-animation: large-bg-image-animasi 200s linear infinite;
   -webkit-animation: large-bg-image-animasi 200s linear infinite;
   overflow-x: hidden;
+  position:initial;
 }
 
 @keyframes large-bg-image-animasi {
@@ -101,7 +102,7 @@ body {
   ;
 }
 
-.marker-title {
+/* .marker-title {
   font-size: 28px;
   color: black;
   font-weight: bold;
@@ -186,7 +187,7 @@ body {
 }
 
 /* This is the controls for moves sledge*/
-.move4 {
+/* .move4 {
   -webkit-animation: move-move 1s 0s ease-out forwards;
   animation: move-move 1s 0s ease-out forwards;
   -webkit-animation-duration: 130s;
@@ -208,11 +209,11 @@ body {
 .imageville {
   width: 200px;
   height: 200px;
-}
+} */ */
 
 /* modal */
 .modal-content {
-  /* background: linear-gradient(#7ee664c8, #9198e500); */
+
   background-image: url(./images/palmier.jpg);
   background-size: cover;
   background-position: center;
