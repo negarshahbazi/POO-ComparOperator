@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 
 <body id="background-destination">
     <div class="mt-5">
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg  container bg-black rounded-5 shadow">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,9 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 </div>
             </div>
         </nav>
-
-
     </div>
+    <!-- show  all of the operators-->
     <div class="row d-flex justify-content-around aligne-items-center p-5">
         <?php foreach ($opers as $oper) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
@@ -88,26 +88,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                             </g>
                         </svg></li>
                     <div class="d-flex m-2">
-                        <li class="list-group-item bg-dark text-white border-0">Is Premium : </li>
+                        <li class="list-group-item bg-dark text-white border-0">Premium : </li>
                             <!-- modifier premium -->
                             <form action="./process/premium.php" method="post">
                                 <input type="hidden" value="<?php echo $oper->getId() ?>" name="modifierPremiumIdOperator">
                                 <button type="submit" name="sendModifier" class="btn bg-success-subtle p-0 shadow rounded-circle hover"><img class="truefalse" src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></button>
-                            </form>
-                       
+                            </form>                      
                     </div>
 
                 </ul>
                 <div class="card-body ">
                     <form action="./alldestinations.php" method="post">
                         <input type="hidden" name="id_tour_operator" value="<?php echo $oper->getId() ?>">
-                        <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir tout destinations</button>
+                        <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir les destinations</button>
                     </form>
                 </div>
             </div>
         <?php } ?>
     </div>
-    <!-- + -->
+    <!-- + add new operator by administrateur-->
     <div class="card bg-dark mx-auto mb-3 p-3" style="width: 18rem;">
         <div class="d-flex justify-content-center aligne-items-center">
             <a href="#"><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">

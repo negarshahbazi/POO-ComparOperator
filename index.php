@@ -59,9 +59,9 @@ foreach ($new as $pay) {
         </nav>
 
         <div class="">
-         <img class="w-50 h-50 mt-5" src="./images/logo-transparent2-png.png" alt="">
-         </div>
-            <!-- <div class="move mt-5">
+            <img class="w-50 h-50 mt-5" src="./images/logo-transparent2-png.png" alt="">
+        </div>
+        <!-- <div class="move mt-5">
                 <span class="marker-title">Hotel</span>
                 <span class="marker-caption"><img class="imageville" src="./images/hotel.jpg" alt=""></span>
 
@@ -71,10 +71,9 @@ foreach ($new as $pay) {
                 <span class="marker-caption"><img class="imageville" src="./images/girl.jpg" alt=""></span>
 
             </div> -->
-      
+
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
-
     <form action="" method="post" enctype="multipart/form-data">
         <div class="modal mt-5 text-center" id="administrateur" tabindex="-1" role="dialog">
             <div class="modal-dialog " role="document">
@@ -87,9 +86,6 @@ foreach ($new as $pay) {
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-center">
                         <img class="w-50" src="./images/avatar.gif" class="opacity-75" alt="">
-
-
-
                         <label for="">Saisir votre mot de pass:</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
 
@@ -101,8 +97,6 @@ foreach ($new as $pay) {
                 </div>
             </div>
         </div>
-
-
     </form>
     <!-- destinations -->
     <div class="background">
@@ -116,25 +110,22 @@ foreach ($new as $pay) {
                         <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
                             <h3 class="card-title"><?php echo $newDestination->getLocation() ?></h3>
                             <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
-
                         </div>
                         <ul class="list-group list-unstyled">
                             <div class="d-flex justify-content-between aligne-items-center">
-
                                 <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
-
                             </div>
                         </ul>
                         <form action="./comparer.php" method="post">
                             <button type="submit" class="text-center btn btn-success card-link text-decoration-none text-white">Comparer</button>
                             <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
-
                         </form>
                     </div>
                 <?php } ?>
             </div>
         </div>
     </div>
+
     <!-- footer -->
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
@@ -147,7 +138,6 @@ foreach ($new as $pay) {
                             <p>Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure. </p>
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget no-box">
                             <h5 class="widget-title">Liens rapides<span></span></h5>

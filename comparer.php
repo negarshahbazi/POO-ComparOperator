@@ -105,7 +105,7 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                                                 </svg> </li>
 
                                         <li class="list-group-item bg-dark text-white">Grade:<span class="text-warning"> <?php echo  $loc['grade_total'] ?> </span>/10 <img class="w-25 h-75" src="./images/satisfaction-.png" alt=""></li>
-                                        <li class="list-group-item bg-dark text-white ">Is Premium: <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
+                                        <li class="list-group-item bg-dark text-white ">Premium: <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
 
                                     </ul>
                                 </div>
