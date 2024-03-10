@@ -86,7 +86,7 @@ foreach ($new as $pay) {
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-center">
                         <img class="w-50" src="./images/avatar.gif" class="opacity-75" alt="">
-                        <label for="">Saisir votre mot de pass:</label>
+                        <label for="">Saisir mot de pass:(sn2024)</label>
                         <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
 
                         <div class="modal-footer">
